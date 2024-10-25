@@ -11,7 +11,6 @@ export async function GET(req: Request): Promise<NextResponse> {
     return NextResponse.json({ error: "No [city] provided" }, { status: 400 });
   }
 
-  console.log("API KEY", WEATHER_API_KEY);
   const res = await fetch(
     `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/next7days?unitGroup=us&include=days%2Ccurrent%2Cevents&key=${WEATHER_API_KEY}&contentType=json`
   );
